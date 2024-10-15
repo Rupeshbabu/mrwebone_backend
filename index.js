@@ -54,7 +54,9 @@ mongoose
     .connect(updateDB, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        tlsAllowInvalidCertificates: true,
+        ssl: true,
+        tls: true,
+        tlsInsecure: false,
     })
     .then(() => {
         console.log('DB Connection Successfully!');
