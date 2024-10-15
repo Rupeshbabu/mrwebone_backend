@@ -9,6 +9,7 @@ const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 async function sendTelegramNotification({ username, email, mobile, subject, message }) {
 
     // PortfolioOct24_bot
+    // @userinfo
     const text = `
     📬 New Contact Us Message:
     ------------------------------
