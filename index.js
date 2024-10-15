@@ -51,8 +51,8 @@ const cloudDB = `mongodb+srv://${process.env.DATABASE}:${process.env.DATABASE_PA
 
 mongoose
     .connect(cloudDB, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+        // useNewUrlParser: true,
+        // useUnifiedTopology: true
     })
     .then(() => {
         console.log('DB Connection Successfully!');
