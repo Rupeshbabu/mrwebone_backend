@@ -34,7 +34,20 @@ exports.sendClientRequest = async (req, res, next) => {
 }
 
 exports.getClientReq = async (req, res) => {
-    return res.status(200).json({
-        message: 'In progress'
-    });
+    try {
+        const UserReqs = await Client.find();
+        return res.status(200).json({
+            status: 'success',
+            data: UserReqs
+        });
+    } catch (error) {
+        console.log(error);
+
+        return res.status(400).json({
+            status: 'failed',
+            data: [],
+            error: error
+        });
+    }
+
 }
