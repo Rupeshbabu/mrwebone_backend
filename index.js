@@ -48,11 +48,13 @@ app.listen(port, () => {
 
 const DB = process.env.DATABASE_LOCAL;
 const cloudDB = `mongodb+srv://${process.env.DATABASE}:${process.env.DATABASE_PASSWORD}@mrwebone.7hbal.mongodb.net/`;
+const updateDB = `mongodb+srv://<username>:<password>@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority`
 
 mongoose
     .connect(cloudDB, {
-        // useNewUrlParser: true,
-        // useUnifiedTopology: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        tlsAllowInvalidCertificates: true,
     })
     .then(() => {
         console.log('DB Connection Successfully!');
